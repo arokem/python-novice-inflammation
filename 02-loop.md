@@ -11,18 +11,18 @@ minutes: 30
 > *   Trace changes to a loop variable as the loop runs.
 > *   Trace changes to other variables as they are updated by a for loop.
 
-In the last lesson,
-we wrote some code that plots some values of interest from our first inflammation dataset,
-and reveals some suspicious features in it, such as from `inflammation-01.csv`
+In the last lesson, we wrote some code that plots some values of interest from
+a single slice of the data.
 
 ![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\
 
-We have a dozen data sets right now, though, and more on the way.
-We want to create plots for all of our data sets with a single statement.
-To do that, we'll have to teach the computer how to repeat things.
+We have a dozen data sets right now, though, and more on the way. We want to
+create plots for all of our data sets with a single statement. To do that, we'll
+have to teach the computer how to repeat things.
 
 An example task that we might want to repeat is printing each character in a
-word on a line of its own. One way to do this would be to use a series of `print` statements:
+word on a line of its own. One way to do this would be to use a series of
+`print` statements:
 
 ~~~ {.python}
 word = 'lead'
@@ -42,8 +42,7 @@ d
 This is a bad approach for two reasons:
 
 1.  It doesn't scale:
-    if we want to print the characters in a string that's hundreds of letters long,
-    we'd be better off just typing them in.
+    if we want to print the characters in a string that's hundreds of letters long, we'd be better off just typing them in.
 
 1.  It's fragile:
     if we give it a longer string,
@@ -92,8 +91,8 @@ a
 d
 ~~~
 
-This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
-more robust as well:
+This is shorter---certainly shorter than something that prints every character
+in a hundred-letter string---and more robust as well:
 
 ~~~ {.python}
 word = 'oxygen'
@@ -110,9 +109,9 @@ e
 n
 ~~~
 
-The improved version uses a [for loop](reference.html#for-loop)
-to repeat an operation---in this case, printing---once for each thing in a collection.
-The general form of a loop is:
+The improved version uses a [for loop](reference.html#for-loop) to repeat an
+operation---in this case, printing---once for each thing in a collection. The
+general form of a loop is:
 
 ~~~ {.python}
 for variable in collection:
@@ -120,9 +119,10 @@ for variable in collection:
 ~~~
 
 We can call the [loop variable](reference.html#loop-variable) anything we like,
-but there must be a colon at the end of the line starting the loop,
-and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
+but there must be a colon at the end of the line starting the loop, and we must
+indent anything we want to run inside the loop. Unlike many other languages,
+there is no command to signify the end of the loop body (e.g. end for); what is
+indented after the for statement belongs to the loop.
 
 Here's another loop that repeatedly updates a variable:
 
@@ -137,27 +137,20 @@ print('There are', length, 'vowels')
 There are 5 vowels
 ~~~
 
-It's worth tracing the execution of this little program step by step.
-Since there are five characters in `'aeiou'`,
-the statement on line 3 will be executed five times.
-The first time around,
-`length` is zero (the value assigned to it on line 1)
-and `vowel` is `'a'`.
-The statement adds 1 to the old value of `length`,
-producing 1,
-and updates `length` to refer to that new value.
-The next time around,
-`vowel` is `'e'` and `length` is 1,
-so `length` is updated to be 2.
-After three more updates,
-`length` is 5;
-since there is nothing left in `'aeiou'` for Python to process,
-the loop finishes
-and the `print` statement on line 4 tells us our final answer.
+It's worth tracing the execution of this little program step by step. Since
+there are five characters in `'aeiou'`, the statement on line 3 will be executed
+five times.
+The first time around, `length` is zero (the value assigned to it on
+line 1) and `vowel` is `'a'`. The statement adds 1 to the old value of `length`,
+producing 1, and updates `length` to refer to that new value. The next time
+around, `vowel` is `'e'` and `length` is 1, so `length` is updated to be 2.
+After three more updates, `length` is 5; since there is nothing left in
+`'aeiou'` for Python to process, the loop finishes and the `print` statement on
+line 4 tells us our final answer.
 
-Note that a loop variable is just a variable that's being used to record progress in a loop.
-It still exists after the loop is over,
-and we can re-use variables previously defined as loop variables as well:
+Note that a loop variable is just a variable that's being used to record
+progress in a loop. It still exists after the loop is over, and we can re-use
+variables previously defined as loop variables as well:
 
 ~~~ {.python}
 letter = 'z'
@@ -184,10 +177,9 @@ print(len('aeiou'))
 5
 ~~~
 
-`len` is much faster than any function we could write ourselves,
-and much easier to read than a two-line loop;
-it will also give us the length of many other things that we haven't met yet,
-so we should always use it when we can.
+`len` is much faster than any function we could write ourselves, and much easier
+to read than a two-line loop; it will also give us the length of many other
+things that we haven't met yet, so we should always use it when we can.
 
 
 > ## From 1 to N {.challenge}

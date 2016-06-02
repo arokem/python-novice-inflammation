@@ -9,12 +9,10 @@ minutes: 30
 > *   Explain what a list is.
 > *   Create and index lists of simple values.
 
-Just as a `for` loop is a way to do operations many times,
-a list is a way to store many values.
-Unlike NumPy arrays,
-lists are built into the language (so we don't have to load a library
-to use them).
-We create a list by putting values inside square brackets:
+Just as a `for` loop is a way to do operations many times, a list is a way to
+store many values. Unlike NumPy arrays, lists are built into the language (so we
+don't have to load a library to use them). We create a list by putting values
+inside square brackets:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
@@ -50,10 +48,8 @@ for number in odds:
 7
 ~~~
 
-There is one important difference between lists and strings:
-we can change the values in a list,
-but we cannot change the characters in a string.
-For example:
+There is one important difference between lists and strings: we can change the
+values in a list, but we cannot change the characters in a string. For example:
 
 ~~~ {.python}
 names = ['Newton', 'Darwing', 'Turing'] # typo in Darwin's name
@@ -155,8 +151,8 @@ does not.
 > Thanks to [Hadley Wickham](https://twitter.com/hadleywickham/status/643381054758363136)
 > for the image above.
 
-There are many ways to change the contents of lists besides assigning new values to
-individual elements:
+There are many ways to change the contents of lists besides assigning new values
+to individual elements:
 
 ~~~ {.python}
 odds.append(11)
@@ -182,9 +178,11 @@ print('odds after reversing:', odds)
 odds after reversing: [11, 7, 5, 3]
 ~~~
 
-While modifying in place, it is useful to remember that Python treats lists in a slightly counterintuitive way.
+While modifying in place, it is useful to remember that Python treats lists in a
+slightly counterintuitive way.
 
-If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
+If we make a list and (attempt to) copy it then modify in place, we can cause
+all sorts of trouble:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
@@ -198,8 +196,9 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7, 2]
 ~~~
 
-This is because Python stores a list in memory, and then can use multiple names to refer to the same list.
-If all we want to do is copy a (simple) list, we can use the `list` function, so we do not modify a list we did not mean to:
+This is because Python stores a list in memory, and then can use multiple names
+to refer to the same list. If all we want to do is copy a (simple) list, we can
+use the `list` function, so we do not modify a list we did not mean to:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
@@ -213,7 +212,8 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7]
 ~~~
 
-This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
+This is different from how variables worked in lesson 1, and more similar to how
+a spreadsheet works.
 
 > ## Turn a string into a list {.challenge}
 >

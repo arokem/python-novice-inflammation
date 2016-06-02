@@ -16,28 +16,25 @@ The only thing that's missing is a library with a rather unpleasant name:
 import glob
 ~~~
 
-The `glob` library contains a single function, also called `glob`,
-that finds files whose names match a pattern.
-We provide those patterns as strings:
-the character `*` matches zero or more characters,
-while `?` matches any one character.
-We can use this to get the names of all the CSV files in the current directory:
+The `glob` library contains a single function, also called `glob`, that finds
+files whose names match a pattern. We provide those patterns as strings: the
+character `*` matches zero or more characters, while `?` matches any one
+character. We can use this to get the names of all the CSV files in the current
+directory:
 
 ~~~ {.python}
-print(glob.glob('data/inflammation*.csv'))
+print(glob.glob('./data/slice*.npy'))
 ~~~
 
 ~~~ {.output}
-['data/inflammation-01.csv', 'data/inflammation-02.csv', 'data/inflammation-03.csv', 'data/inflammation-04.csv', 'data/inflammation-05.csv', 'data/inflammation-06.csv', 'data/inflammation-07.csv', 'data/inflammation-08.csv', 'data/inflammation-09.csv', 'data/inflammation-10.csv', 'data/inflammation-11.csv', 'data/inflammation-12.csv']
+['./data/slice1.npy', './data/slice2.npy', './data/slice3.npy']
 ~~~
 
-As these examples show,
-`glob.glob`'s result is a list of strings,
-which means we can loop over it
-to do something with each filename in turn.
-In our case,
-the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
-Let's test it by analyzing the first three files in the list:
+As these examples show, `glob.glob`'s result is a list of strings, which means
+we can loop over it to do something with each filename in turn. In our case, the
+"something" we want to do is generate a set of plots for each file in our
+inflammation dataset. Let's test it by analyzing the first three files in the
+list:
 
 ~~~ {.python}
 import numpy
